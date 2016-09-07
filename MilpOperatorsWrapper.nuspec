@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Adam Furmanek</authors>
+    <owners>Adam Furmanek</owners>
+	<licenseUrl>https://github.com/afish/MilpOperatorsWrapper/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/afish/MilpOperatorsWrapper</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright 2016</copyright>
+    <tags>ILP MILP LP MilpManager MilpSolver</tags>
+  </metadata>
+</package>
