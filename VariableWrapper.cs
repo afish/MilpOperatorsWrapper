@@ -25,7 +25,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of addition</returns>
         public static VariableWrapper operator +(VariableWrapper a, IVariable b)
         {
-            return a.Wrapped.Operation(OperationType.Addition, b).Wrap();
+            return a.Wrapped.Operation<Addition>(b).Wrap();
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of addition</returns>
         public static VariableWrapper operator +(VariableWrapper a, VariableWrapper b)
         {
-            return a.Wrapped.Operation(OperationType.Addition, b.Wrapped).Wrap();
+            return a.Wrapped.Operation<Addition>(b.Wrapped).Wrap();
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of addition</returns>
         public static VariableWrapper operator +(VariableWrapper a, int b)
         {
-            return a.Wrapped.Operation(OperationType.Addition, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<Addition>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of addition</returns>
         public static VariableWrapper operator +(VariableWrapper a, double b)
         {
-            return a.Wrapped.Operation(OperationType.Addition, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<Addition>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of subtraction</returns>
         public static VariableWrapper operator -(VariableWrapper a, IVariable b)
         {
-            return a.Wrapped.Operation(OperationType.Subtraction, b).Wrap();
+            return a.Wrapped.Operation<Subtraction>(b).Wrap();
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of subtraction</returns>
         public static VariableWrapper operator -(VariableWrapper a, VariableWrapper b)
         {
-            return a.Wrapped.Operation(OperationType.Subtraction, b.Wrapped).Wrap();
+            return a.Wrapped.Operation<Subtraction>(b.Wrapped).Wrap();
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of subtraction</returns>
         public static VariableWrapper operator -(VariableWrapper a, int b)
         {
-            return a.Wrapped.Operation(OperationType.Subtraction, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<Subtraction>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of subtraction</returns>
         public static VariableWrapper operator -(VariableWrapper a, double b)
         {
-            return a.Wrapped.Operation(OperationType.Subtraction, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<Subtraction>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of multiplication</returns>
         public static VariableWrapper operator *(VariableWrapper a, IVariable b)
         {
-            return a.Wrapped.Operation(OperationType.Multiplication, b).Wrap();
+            return a.Wrapped.Operation<Multiplication>(b).Wrap();
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of multiplication</returns>
         public static VariableWrapper operator *(VariableWrapper a, VariableWrapper b)
         {
-            return a.Wrapped.Operation(OperationType.Multiplication, b.Wrapped).Wrap();
+            return a.Wrapped.Operation<Multiplication>(b.Wrapped).Wrap();
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of multiplication</returns>
         public static VariableWrapper operator *(VariableWrapper a, int b)
         {
-            return a.Wrapped.Operation(OperationType.Multiplication, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<Multiplication>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of multiplication</returns>
         public static VariableWrapper operator *(VariableWrapper a, double b)
         {
-            return a.Wrapped.Operation(OperationType.Multiplication, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<Multiplication>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of division</returns>
         public static VariableWrapper operator /(VariableWrapper a, IVariable b)
         {
-            return a.Wrapped.Operation(OperationType.Division, b).Wrap();
+            return a.Wrapped.Operation<Division>(b).Wrap();
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of division</returns>
         public static VariableWrapper operator /(VariableWrapper a, VariableWrapper b)
         {
-            return a.Wrapped.Operation(OperationType.Division, b.Wrapped).Wrap();
+            return a.Wrapped.Operation<Division>(b.Wrapped).Wrap();
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of division</returns>
         public static VariableWrapper operator /(VariableWrapper a, int b)
         {
-            return a.Wrapped.Operation(OperationType.Division, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<Division>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -190,7 +190,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of division</returns>
         public static VariableWrapper operator /(VariableWrapper a, double b)
         {
-            return a.Wrapped.Operation(OperationType.Division, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<Division>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of modulo</returns>
         public static VariableWrapper operator %(VariableWrapper a, IVariable b)
         {
-            return a.Wrapped.Operation(OperationType.Remainder, b).Wrap();
+            return a.Wrapped.Operation<Remainder>(b).Wrap();
         }
 
         /// <summary>
@@ -212,7 +212,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of modulo</returns>
         public static VariableWrapper operator %(VariableWrapper a, VariableWrapper b)
         {
-            return a.Wrapped.Operation(OperationType.Remainder, b.Wrapped).Wrap();
+            return a.Wrapped.Operation<Remainder>(b.Wrapped).Wrap();
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of modulo</returns>
         public static VariableWrapper operator %(VariableWrapper a, int b)
         {
-            return a.Wrapped.Operation(OperationType.Remainder, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<Remainder>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of modulo</returns>
         public static VariableWrapper operator %(VariableWrapper a, double b)
         {
-            return a.Wrapped.Operation(OperationType.Remainder, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<Remainder>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -245,7 +245,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of exclusive disjunction (XOR)</returns>
         public static VariableWrapper operator ^(VariableWrapper a, IVariable b)
         {
-            return a.Wrapped.Operation(OperationType.ExclusiveDisjunction, b).Wrap();
+            return a.Wrapped.Operation<ExclusiveDisjunction>(b).Wrap();
         }
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of exclusive disjunction (XOR)</returns>
         public static VariableWrapper operator ^(VariableWrapper a, VariableWrapper b)
         {
-            return a.Wrapped.Operation(OperationType.ExclusiveDisjunction, b.Wrapped).Wrap();
+            return a.Wrapped.Operation<ExclusiveDisjunction>(b.Wrapped).Wrap();
         }
 
         /// <summary>
@@ -267,7 +267,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of exclusive disjunction (XOR)</returns>
         public static VariableWrapper operator ^(VariableWrapper a, int b)
         {
-            return a.Wrapped.Operation(OperationType.ExclusiveDisjunction, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<ExclusiveDisjunction>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -278,7 +278,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of disjunction</returns>
         public static VariableWrapper operator |(VariableWrapper a, IVariable b)
         {
-            return a.Wrapped.Operation(OperationType.Disjunction, b).Wrap();
+            return a.Wrapped.Operation<Disjunction>(b).Wrap();
         }
 
         /// <summary>
@@ -289,7 +289,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of disjunction</returns>
         public static VariableWrapper operator |(VariableWrapper a, VariableWrapper b)
         {
-            return a.Wrapped.Operation(OperationType.Disjunction, b.Wrapped).Wrap();
+            return a.Wrapped.Operation<Disjunction>(b.Wrapped).Wrap();
         }
 
         /// <summary>
@@ -300,7 +300,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of disjunction</returns>
         public static VariableWrapper operator |(VariableWrapper a, int b)
         {
-            return a.Wrapped.Operation(OperationType.Disjunction, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<Disjunction>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
         
         /// <summary>
@@ -311,7 +311,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of conjunction</returns>
         public static VariableWrapper operator &(VariableWrapper a, IVariable b)
         {
-            return a.Wrapped.Operation(OperationType.Conjunction, b).Wrap();
+            return a.Wrapped.Operation<Conjunction>(b).Wrap();
         }
 
         /// <summary>
@@ -322,7 +322,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of conjunction</returns>
         public static VariableWrapper operator &(VariableWrapper a, VariableWrapper b)
         {
-            return a.Wrapped.Operation(OperationType.Conjunction, b.Wrapped).Wrap();
+            return a.Wrapped.Operation<Conjunction>(b.Wrapped).Wrap();
         }
 
         /// <summary>
@@ -333,7 +333,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of conjunction</returns>
         public static VariableWrapper operator &(VariableWrapper a, int b)
         {
-            return a.Wrapped.Operation(OperationType.Conjunction, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<Conjunction>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
         
         /// <summary>
@@ -344,7 +344,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of LT comparison</returns>
         public static VariableWrapper operator <(VariableWrapper a, IVariable b)
         {
-            return a.Wrapped.Operation(OperationType.IsLessThan, b).Wrap();
+            return a.Wrapped.Operation<IsLessThan>(b).Wrap();
         }
 
         /// <summary>
@@ -355,7 +355,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of LT comparison</returns>
         public static VariableWrapper operator <(VariableWrapper a, VariableWrapper b)
         {
-            return a.Wrapped.Operation(OperationType.IsLessThan, b.Wrapped).Wrap();
+            return a.Wrapped.Operation<IsLessThan>(b.Wrapped).Wrap();
         }
 
         /// <summary>
@@ -366,7 +366,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of LT comparison</returns>
         public static VariableWrapper operator <(VariableWrapper a, int b)
         {
-            return a.Wrapped.Operation(OperationType.IsLessThan, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<IsLessThan>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -377,7 +377,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of LT comparison</returns>
         public static VariableWrapper operator <(VariableWrapper a, double b)
         {
-            return a.Wrapped.Operation(OperationType.IsLessThan, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<IsLessThan>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -388,7 +388,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of GT comparison</returns>
         public static VariableWrapper operator >(VariableWrapper a, IVariable b)
         {
-            return a.Wrapped.Operation(OperationType.IsGreaterThan, b).Wrap();
+            return a.Wrapped.Operation<IsGreaterThan>(b).Wrap();
         }
 
         /// <summary>
@@ -399,7 +399,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of GT comparison</returns>
         public static VariableWrapper operator >(VariableWrapper a, VariableWrapper b)
         {
-            return a.Wrapped.Operation(OperationType.IsGreaterThan, b.Wrapped).Wrap();
+            return a.Wrapped.Operation<IsGreaterThan>(b.Wrapped).Wrap();
         }
 
         /// <summary>
@@ -410,7 +410,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of GT comparison</returns>
         public static VariableWrapper operator >(VariableWrapper a, int b)
         {
-            return a.Wrapped.Operation(OperationType.IsGreaterThan, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<IsGreaterThan>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -421,7 +421,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of GT comparison</returns>
         public static VariableWrapper operator >(VariableWrapper a, double b)
         {
-            return a.Wrapped.Operation(OperationType.IsGreaterThan, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<IsGreaterThan>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -432,7 +432,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of LE comparison</returns>
         public static VariableWrapper operator <=(VariableWrapper a, IVariable b)
         {
-            return a.Wrapped.Operation(OperationType.IsLessOrEqual, b).Wrap();
+            return a.Wrapped.Operation<IsLessOrEqual>(b).Wrap();
         }
 
         /// <summary>
@@ -443,7 +443,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of LE comparison</returns>
         public static VariableWrapper operator <=(VariableWrapper a, VariableWrapper b)
         {
-            return a.Wrapped.Operation(OperationType.IsLessOrEqual, b.Wrapped).Wrap();
+            return a.Wrapped.Operation<IsLessOrEqual>(b.Wrapped).Wrap();
         }
 
         /// <summary>
@@ -454,7 +454,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of LE comparison</returns>
         public static VariableWrapper operator <=(VariableWrapper a, int b)
         {
-            return a.Wrapped.Operation(OperationType.IsLessOrEqual, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<IsLessOrEqual>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -465,7 +465,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of LE comparison</returns>
         public static VariableWrapper operator <=(VariableWrapper a, double b)
         {
-            return a.Wrapped.Operation(OperationType.IsLessOrEqual, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<IsLessOrEqual>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -476,7 +476,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of GE comparison</returns>
         public static VariableWrapper operator >=(VariableWrapper a, IVariable b)
         {
-            return a.Wrapped.Operation(OperationType.IsGreaterOrEqual, b).Wrap();
+            return a.Wrapped.Operation<IsGreaterOrEqual>(b).Wrap();
         }
 
         /// <summary>
@@ -487,7 +487,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of GE comparison</returns>
         public static VariableWrapper operator >=(VariableWrapper a, VariableWrapper b)
         {
-            return a.Wrapped.Operation(OperationType.IsGreaterOrEqual, b.Wrapped).Wrap();
+            return a.Wrapped.Operation<IsGreaterOrEqual>(b.Wrapped).Wrap();
         }
 
         /// <summary>
@@ -498,7 +498,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of GE comparison</returns>
         public static VariableWrapper operator >=(VariableWrapper a, int b)
         {
-            return a.Wrapped.Operation(OperationType.IsGreaterOrEqual, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<IsGreaterOrEqual>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -509,7 +509,7 @@ namespace MilpOperatorsWrapper
         /// <returns>Result of GE comparison</returns>
         public static VariableWrapper operator >=(VariableWrapper a, double b)
         {
-            return a.Wrapped.Operation(OperationType.IsGreaterOrEqual, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<IsGreaterOrEqual>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -524,7 +524,7 @@ namespace MilpOperatorsWrapper
             {
                 throw new ArgumentException(nameof(a));
             }
-            return a.Wrapped.Operation(OperationType.IsEqual, b).Wrap();
+            return a.Wrapped.Operation<IsEqual>(b).Wrap();
         }
 
         /// <summary>
@@ -539,7 +539,7 @@ namespace MilpOperatorsWrapper
             {
                 throw new ArgumentException(nameof(a));
             }
-            return a.Wrapped.Operation(OperationType.IsEqual, b.Wrapped).Wrap();
+            return a.Wrapped.Operation<IsEqual>(b.Wrapped).Wrap();
         }
 
         /// <summary>
@@ -554,7 +554,7 @@ namespace MilpOperatorsWrapper
             {
                 throw new ArgumentException(nameof(a));
             }
-            return a.Wrapped.Operation(OperationType.IsEqual, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<IsEqual>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -569,7 +569,7 @@ namespace MilpOperatorsWrapper
             {
                 throw new ArgumentException(nameof(a));
             }
-            return a.Wrapped.Operation(OperationType.IsEqual, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<IsEqual>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -584,7 +584,7 @@ namespace MilpOperatorsWrapper
             {
                 throw new ArgumentException(nameof(a));
             }
-            return a.Wrapped.Operation(OperationType.IsNotEqual, b).Wrap();
+            return a.Wrapped.Operation<IsNotEqual>(b).Wrap();
         }
 
         /// <summary>
@@ -599,7 +599,7 @@ namespace MilpOperatorsWrapper
             {
                 throw new ArgumentException(nameof(a));
             }
-            return a.Wrapped.Operation(OperationType.IsNotEqual, b.Wrapped).Wrap();
+            return a.Wrapped.Operation<IsNotEqual>(b.Wrapped).Wrap();
         }
 
         /// <summary>
@@ -614,7 +614,7 @@ namespace MilpOperatorsWrapper
             {
                 throw new ArgumentException(nameof(a));
             }
-            return a.Wrapped.Operation(OperationType.IsNotEqual, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<IsNotEqual>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         /// <summary>
@@ -629,7 +629,7 @@ namespace MilpOperatorsWrapper
             {
                 throw new ArgumentException(nameof(a));
             }
-            return a.Wrapped.Operation(OperationType.IsNotEqual, a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+            return a.Wrapped.Operation<IsNotEqual>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
         }
 
         private bool Equals(VariableWrapper other)
