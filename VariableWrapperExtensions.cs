@@ -3,6 +3,9 @@ using System.Linq;
 using Castle.DynamicProxy;
 using MilpManager.Abstraction;
 using MilpManager.Implementation;
+using MilpManager.Utilities;
+using Constraint = MilpManager.Abstraction.Constraint;
+using Operation = MilpManager.Abstraction.Operation;
 
 namespace MilpOperatorsWrapper
 {
@@ -67,7 +70,7 @@ namespace MilpOperatorsWrapper
 		/// <param name="variable">Variable to perform operation on</param>
 		/// <param name="variables">Operation arguments</param>
 		/// <returns>Operation result</returns>
-		public static VariableWrapper Operation<TOperationType>(this VariableWrapper variable, params IVariable[] variables) where TOperationType : OperationType
+		public static VariableWrapper Operation<TOperationType>(this VariableWrapper variable, params IVariable[] variables) where TOperationType : Operation
 		{
 			return ((IVariable)variable).Operation<TOperationType>(variables).Wrap();
 		}
@@ -79,7 +82,7 @@ namespace MilpOperatorsWrapper
 		/// <param name="variable">Variable to perform operation on</param>
 		/// <param name="variables">Operation arguments</param>
 		/// <returns>Operation result</returns>
-		public static IEnumerable<VariableWrapper> CompositeOperation<TCompositeOperationType>(this VariableWrapper variable, params IVariable[] variables) where TCompositeOperationType : CompositeOperationType
+		public static IEnumerable<VariableWrapper> CompositeOperation<TCompositeOperationType>(this VariableWrapper variable, params IVariable[] variables) where TCompositeOperationType : CompositeOperation
 		{
 			return ((IVariable)variable).CompositeOperation<TCompositeOperationType>(variables).Select(Wrap);
 		}
@@ -91,7 +94,7 @@ namespace MilpOperatorsWrapper
 		/// <param name="variable">Variable to constrain</param>
 		/// <param name="right">Right hand side of a constraint</param>
 		/// <returns>Variable passed as an argument</returns>
-		public static VariableWrapper Set<TConstraintType>(this VariableWrapper variable, IVariable right) where TConstraintType : ConstraintType
+		public static VariableWrapper Set<TConstraintType>(this VariableWrapper variable, IVariable right) where TConstraintType : Constraint
 		{
 			return ((IVariable) variable).Set<TConstraintType>(right).Wrap();
 		}
@@ -105,7 +108,7 @@ namespace MilpOperatorsWrapper
 		/// <param name="parameters">Additional constraint parameters</param>
 		/// <param name="right">Right hand side of a constraint</param>
 		/// <returns>Variable passed as an argument</returns>
-		public static VariableWrapper Set<TCompositeConstraintType>(this VariableWrapper variable, ICompositeConstraintParameters parameters, params IVariable[] right) where TCompositeConstraintType : CompositeConstraintType
+		public static VariableWrapper Set<TCompositeConstraintType>(this VariableWrapper variable, ICompositeConstraintParameters parameters, params IVariable[] right) where TCompositeConstraintType : CompositeConstraint
 		{
 			return ((IVariable) variable).Set<TCompositeConstraintType>(parameters, right).Wrap();
 		}
@@ -117,7 +120,7 @@ namespace MilpOperatorsWrapper
 		/// <param name="variable">Variable to make goal</param>
 		/// <param name="variables">Additional variables required to make a goal</param>
 		/// <returns>Variable representing goal</returns>
-		public static VariableWrapper MakeGoal<TGoalType>(this VariableWrapper variable, params IVariable[] variables) where TGoalType : GoalType
+		public static VariableWrapper MakeGoal<TGoalType>(this VariableWrapper variable, params IVariable[] variables) where TGoalType : Goal
 		{
 			return ((IVariable) variable).MakeGoal<TGoalType>(variables).Wrap();
 		}

@@ -4,6 +4,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Runtime.Remoting.Proxies;
 using MilpManager.Abstraction;
 using MilpManager.Implementation;
+using MilpManager.Utilities;
 
 namespace MilpOperatorsWrapper
 {
@@ -181,7 +182,7 @@ namespace MilpOperatorsWrapper
 		/// <returns>Result of division</returns>
 		public static VariableWrapper operator /(VariableWrapper a, IVariable b)
 		{
-			return a.Wrapped.Operation<Division>(b).Wrap();
+			return a.Wrapped.Operation<RealDivision>(b).Wrap();
 		}
 
 		/// <summary>
@@ -192,7 +193,7 @@ namespace MilpOperatorsWrapper
 		/// <returns>Result of division</returns>
 		public static VariableWrapper operator /(VariableWrapper a, VariableWrapper b)
 		{
-			return a.Wrapped.Operation<Division>(b.Wrapped).Wrap();
+			return a.Wrapped.Operation<RealDivision>(b.Wrapped).Wrap();
 		}
 
 		/// <summary>
@@ -203,7 +204,7 @@ namespace MilpOperatorsWrapper
 		/// <returns>Result of division</returns>
 		public static VariableWrapper operator /(VariableWrapper a, int b)
 		{
-			return a.Wrapped.Operation<Division>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+			return a.Wrapped.Operation<RealDivision>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
 		}
 
 		/// <summary>
@@ -214,7 +215,7 @@ namespace MilpOperatorsWrapper
 		/// <returns>Result of division</returns>
 		public static VariableWrapper operator /(VariableWrapper a, double b)
 		{
-			return a.Wrapped.Operation<Division>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
+			return a.Wrapped.Operation<RealDivision>(a.Wrapped.MilpManager.FromConstant(b)).Wrap();
 		}
 
 		/// <summary>
